@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-双向绑定</title>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div v-cloak id="app">
+	    <input type="text" v-model="message">
+	    <p>{{ message }}</p>
+	</div>
+	
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+		    el: '#app',
+		    data: {
+		        message: 'Hello Vue.js!'
+		    }
+		})
+	</script>
+</body>
+</html>

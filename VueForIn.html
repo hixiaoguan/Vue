@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-渲染列表</title>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div v-cloak id="app">
+	    
+	    <ul>
+	    	<li v-for="todo in todos">
+	    		{{todo.text}}
+	    	</li>
+	    </ul>
+
+	</div>
+	
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+		    el: '#app',
+		    data: {
+		        todos: [
+			      { text: 'Learn JavaScript' },
+			      { text: 'Learn Vue.js' },
+			      { text: 'Build Something Awesome' }
+			    ]
+		    }
+		})
+	</script>
+</body>
+</html>

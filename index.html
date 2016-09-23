@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-Demo</title>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+		li{
+			line-height: 2rem;
+		}
+		a{
+			color: #42b983;
+		}
+	</style>
+</head>
+<body>
+	<div v-cloak id="app">
+	    
+	    <h2>Vue.js Demo</h2>
+
+		<ul>
+			<li>
+				<a href="HelloWorld.html">HelloWorld</a>
+			</li>
+			<li>
+				<a href="VueBind.html">双向绑定</a>
+			</li>
+			<li>
+				<a href="VueForIn.html">渲染列表</a>
+			</li>
+		</ul>
+
+	</div>
+		<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+		    el: '#app',
+		    data: {
+		        message: 'Hello Vue.js!'
+		    }
+		})
+	</script>
+</body>
+</html>
