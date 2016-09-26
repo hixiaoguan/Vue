@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-Hello World</title>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div v-cloak id="app">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">点击翻转信息</button>
+	</div>
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				message: '你好 Vue.js!'
+			},
+			methods: {
+				reverseMessage: function () {
+					this.message = this.message.split('').reverse().join('')
+					console.log(this.message.split(''));//把字符串转换成数组，每个字母为一个元素
+					console.log(this.message.split('').reverse());//把数组元素翻转，正序变倒序
+					console.log(this.message.split('').reverse().join(''));//把数组转换成字符串
+				}
+			}
+		});
+	</script>
+</body>
+</html>
