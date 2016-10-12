@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-Hello World</title>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div v-cloak id="app">
+		<input v-model="newTodo" v-on:keyup.enter="addTodo">
+		<ul>
+			<li v-for="(index, todo) in todos">
+				<span>{{ todo.text }} - {{ index }}</span>
+				<button v-on:click="removeTodo($index)">X</button>
+			</li>
+		</ul>
+	</div>
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				newTodo: '',
+				todos: [
+					{ text: 'Add some todos' }
+				]
+			},
+			methods: {
+				addTodo: function () {
+					var text = this.newTodo.trim()
+					if (text) {
+						this.todos.push({ text: text })
+						this.newTodo = ''
+					}
+				},
+				removeTodo: function (index) {
+					this.todos.splice(index, 1)
+				}
+			}
+		})
+	</script>
+</body>
+</html>
