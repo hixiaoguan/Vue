@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vue 监听变量 watch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        Vue 监听变量 watch:
+        <br/>
+        <div id="watch-example">
+            <p>
+                <input v-model="question">
+            </p>
+            <p>{{ question }}</p>
+        </div>
+
+    </div>
+<script>
+    var watchExampleVM = new Vue({
+        el: '#watch-example',
+        data: {
+            question: '',
+        },
+        watch: {
+            // 如果 `question` 发生改变，这个函数就会运行
+            question: function (newQuestion, oldQuestion) {
+                this.getQuestion();
+            }
+        },
+        methods: {
+            getQuestion: _.debounce(//这个发方法
+                function () {
+                    
+                    var vm = this;
+
+                    console.log(vm.question);
+                    
+                },
+                // 这是我们为判定用户停止输入等待的毫秒数
+                500
+            )
+        }
+    })
+</script>
+</body>
+
+</html>

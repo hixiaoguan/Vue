@@ -10,12 +10,24 @@
     <body>
         <div id="app">
             {{ message }}
+            <ol>
+                <li v-for="lesson in lessons">
+                    <a :href="lesson.name+'.html'">{{lesson.name}}</a>
+                </li>
+            </ol>
         </div>
         <script>
             var app = new Vue({
                 el: '#app',
                 data: {
-                    message: 'Hello Vue!'
+                    message: 'Hello Vue!',
+                    lessons:[
+                        {'name':'v-bind'},
+                        {'name':'v-if'},
+                        {'name':'v-for'},
+                        {'name':'watch'},
+                        {'name':'computed'},
+                    ]
                 }
             })            
         </script>
