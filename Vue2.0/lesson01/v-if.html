@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vue 控制DOM元素显示隐藏 v-if</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            
+             Vue 控制DOM元素显示隐藏 v-if:<br/>
+
+            <p v-if="visiabled">{{message}}</p>
+
+        </div>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!',
+                    visiabled: true
+                }
+            })            
+        </script>
+    </body>
+</html>

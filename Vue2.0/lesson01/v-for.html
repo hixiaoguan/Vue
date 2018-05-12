@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vue 控制DOM元素显示隐藏 v-for</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            
+             Vue 控制循环变量 v-for:<br/>
+
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+
+        </div>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    todos: [
+                        { text: '学习 JavaScript' },
+                        { text: '学习 Vue' },
+                        { text: '整个牛项目' }
+                    ]
+                }
+            })            
+        </script>
+    </body>
+</html>
